@@ -1,7 +1,3 @@
-git remote add origin https://github.com/sumitbora10/School_of_humanities.git
-git branch -M main
-git push -u origin main
-/*
 Social Science Educator Website - School of Humanities
 React + Tailwind CSS Component for selling courses & offering free resources.
 Sections: Home, Courses for Sale, Free Resources, About Me, Contact.
