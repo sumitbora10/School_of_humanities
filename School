@@ -1,0 +1,124 @@
+git remote add origin https://github.com/sumitbora10/School_of_humanities.git
+git branch -M main
+git push -u origin main
+/*
+Social Science Educator Website - School of Humanities
+React + Tailwind CSS Component for selling courses & offering free resources.
+Sections: Home, Courses for Sale, Free Resources, About Me, Contact.
+*/
+
+import React from "react";
+
+export default function SchoolOfHumanities() {
+  const paidCourses = [
+    { title: "Class 6–8 Social Science Foundation", price: "₹2,999", desc: "Complete NCERT syllabus with interactive classes & doubt sessions." },
+    { title: "Class 9 & 10 Social Science CBSE", price: "₹4,999", desc: "In-depth coverage of History, Political Science, Geography, and Economics." },
+    { title: "Class 11 & 12 Humanities", price: "₹6,999", desc: "Advanced preparation for CBSE board exams in History, Political Science, and Psychology." },
+    { title: "Advanced Placement (AP) History & Social Sciences", price: "₹7,999", desc: "Complete preparation for APUSH and related AP exams with practice tests." },
+    { title: "CUET Humanities Preparation", price: "₹5,999", desc: "Focused study plan, mock tests, and syllabus coverage for CUET Humanities." },
+  ];
+
+  const freeResources = [
+    { title: "Class 6–12 Notes PDF", link: "#" },
+    { title: "APUSH Study Guide", link: "#" },
+    { title: "CUET Humanities Prep Guide", link: "#" },
+    { title: "NCERT Mind Maps", link: "#" },
+    { title: "Past Year Papers (CBSE, CUET, AP)", link: "#" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Header */}
+      <header className="bg-indigo-600 text-white p-4 sticky top-0 shadow-md">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">School of Humanities</h1>
+          <nav className="hidden md:flex gap-6">
+            <a href="#courses">Courses</a>
+            <a href="#resources">Free Resources</a>
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-white py-16 text-center">
+        <h2 className="text-4xl font-bold">Master Social Science from Class 6 to Competitive Exams</h2>
+        <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
+          Expert-led online courses and free study materials for CBSE Classes 6–12, Advanced Placement, and CUET exams.
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
+          <a href="#courses" className="bg-indigo-600 text-white px-6 py-3 rounded-lg">Browse Courses</a>
+          <a href="#resources" className="bg-gray-200 px-6 py-3 rounded-lg">Free Resources</a>
+        </div>
+      </section>
+
+      {/* Courses Section */}
+      <section id="courses" className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-semibold mb-6">Online Courses</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {paidCourses.map((course) => (
+            <div key={course.title} className="bg-white rounded-lg shadow p-4 flex flex-col justify-between">
+              <div>
+                <h3 className="font-bold text-lg">{course.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{course.desc}</p>
+              </div>
+              <div className="mt-4">
+                <span className="block font-semibold text-indigo-600">{course.price}</span>
+                <button className="mt-2 w-full bg-indigo-600 text-white py-2 rounded">Enroll Now</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Free Resources */}
+      <section id="resources" className="bg-gray-100 py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-6">Free Study Materials</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {freeResources.map((res) => (
+              <div key={res.title} className="bg-white p-4 rounded shadow">
+                <h4 className="font-medium">{res.title}</h4>
+                <a href={res.link} className="text-indigo-600 text-sm hover:underline">Download</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Me */}
+      <section id="about" className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+        <p className="text-gray-700 max-w-3xl">
+          I am a Social Science educator specializing in CBSE Classes 6–12, Advanced Placement (AP) exams, and CUET Humanities. I have helped hundreds of students achieve academic success through structured lessons, personalized guidance, and rich study materials.
+        </p>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>
+        <form className="bg-white p-6 rounded-lg shadow max-w-lg">
+          <label className="block mb-4">
+            <span className="text-sm">Name</span>
+            <input type="text" className="mt-1 w-full border rounded px-3 py-2" />
+          </label>
+          <label className="block mb-4">
+            <span className="text-sm">Email</span>
+            <input type="email" className="mt-1 w-full border rounded px-3 py-2" />
+          </label>
+          <label className="block mb-4">
+            <span className="text-sm">Message</span>
+            <textarea className="mt-1 w-full border rounded px-3 py-2" rows="4"></textarea>
+          </label>
+          <button className="bg-indigo-600 text-white px-4 py-2 rounded">Send</button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-indigo-600 text-white text-center py-4 mt-8">
+        <p>© {new Date().getFullYear()} School of Humanities. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
